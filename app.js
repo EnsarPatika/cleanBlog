@@ -29,9 +29,12 @@ app.get('/index',async (req, res) => {
   const posts = await Post.find({})
   res.render('index',{posts})
 });
-app.get('/post', (req, res) => {
+app.get('/post/:id',async (req, res) => {
   // res.send({ id: 1, title: 'Blog title', description: 'Blog description' });
-  res.render('post')
+  const post = await Post.find({_id:req.params.id})
+  res.render('post.ejs',{
+    post
+  })
 });
 
 app.post('/postcreated', (req, res) => {
