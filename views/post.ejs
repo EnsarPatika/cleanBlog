@@ -29,6 +29,21 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <p><%= post[0].detail %></p>
         </div>
+        <div class="col-lg-4 col-md-10 mx-auto">
+          <div class="row">
+            <a href="/post/<%= post[0]._id %>/edit"> <button type='submit' class="btn btn-warning" style="width:100px"> Edit  </button></a>
+          </div>
+          <div class="row">
+            <form method="POST" onsubmit="return confirm('Do you really want to delete the post?');" action="/post/<%= post[0]._id %>/edit?_method=DELETE">
+              <button type="submit" class="btn btn-danger" style="width:100px">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+        </div>
       </div>
     </div>
   </article>
